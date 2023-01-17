@@ -1,0 +1,13 @@
+-- Provide the list of markets where customer "Atliq Exclusive" operates its business in the APAC region --
+
+SELECT DISTINCT	market FROM dim_customer
+WHERE customer = "Atliq Exclusive" && region = "APAC";
+
+-- What is the percentage of unique product increase in 2021 vs. 2020? --
+-- The final output contains these fields: unique_products_2020, unique_products_2021, percentage_chg --
+
+SELECT DISTINCT product_code FROM fact_sales_monthly
+WHERE fiscal_year = 2020;
+
+SELECT DISTINCT product_code FROM fact_sales_monthly
+WHERE fiscal_year = 2021;
